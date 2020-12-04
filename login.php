@@ -1,9 +1,18 @@
 <?PHP 
 session_start();
-if (!isset($_GET['evn']) || !isset($_SESSION['V-Help '])) {
-  header('location:index.php');
-}else {
-  $event_name = $_GET['evn'];
+$use="V-Help";
+$pass="V-Help-password";
+$connect = mysqli_connect("localhost","qp5uwu6wq87f","Girish@falcon5","Vhelp");
+if (isset($_POST['login_submit'])) {
+
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+    if ($username == $use && $password == $pass) {
+        $_SESSION['V-Help']="V-Help | Single Platform for Multiple Service";
+        header('location:Customer_requests.php');
+    } else {
+        echo"<script>alert('username or password are wrong')</script>";
+    }  
 }
 ?>
 <!DOCTYPE html>
@@ -74,78 +83,24 @@ if (!isset($_GET['evn']) || !isset($_SESSION['V-Help '])) {
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Get Your Service</h2>
+          <h2>Login</h2>
         </div>
 
-        <div class="row">
+        <div class="row justify-content-md-center">
+          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <form  action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
 
-
-          <div class="col-lg-6 col-md-12 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200"  >
-            <div class="info">
-              <div style="margin-top: 20%;" >
-                <h2 id="intext" style="font-weight: bold;line-height: 60px;">We make you happy with our<br> QUALIFIED PROFESSIONALS!</h2>
-                <p><a href="index.html">V-HELP</a> Single Platform for Multiple Services</p>
-              </div>
-
-
-            </div>
-          </div>
-
-
-          <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="300">
-            <form action="contact_request.php" method="post" role="form" class="php-email-form">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required/>
+                <input type="text" name="username" class="form-control" id="name" placeholder="Username" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required/>
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required/>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Your password" data-rule="email" data-msg="Please enter a valid password" required/>
                 <div class="validate"></div>
               </div>
-              <div class="form-group">
-                <input type="tel" class="form-control" name="contact" id="contact" placeholder="Your Contact" data-rule="contact" data-msg="Please enter a valid contact" required/>
-                <div class="validate"></div>
+              <div class="text-center sendmsg">
+                <button type="submit" name="login_submit" class='btn-lg btn-success'>Login</button>
               </div>
-              <div class="form-group">
-              <input type="hidden" name="services" class="form-control" id="subject" value="<?PHP echo $event_name;?>"required>
-                  <!--<select name="services" class="form-control" id="subject" data-msg="Please select the service" required>
-                    <option value="">------ Select Service ------</option>
-                    <option value="Electrical Works">Electrical Works</option>
-                    <option value="Mobile/Laptop Repairs">Mobile/Laptop Repairs</option>
-                    <option value="Apply PAN">Apply PAN</option>
-                    <option value="Property Brokerage">Property Brokerage</option>
-                    <option value="LIC Services & Housing Loans">LIC Services & Housing Loans</option>
-                    <option value="Coding Classes">Coding Classes</option>
-                    <option value="KG to PG Tutions">KG to PG Tutions</option>
-                    <option value="Music Classes">Music Classes</option>
-                    <option value="Drawing Classes">Drawing Classes</option>
-                    <option value="Arts/Crafts Classes">Arts/Crafts Classes</option>
-                    <option value="Soft Skills Training">Soft Skills Training</option>
-                    <option value="Personality Development">Personality Development</option>
-                    <option value="Voice & Accent Training">Voice & Accent Training</option>
-                    <option value="Resume Building">Resume Building</option>
-                  </select>-->
-              <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <select name="time" class="form-control" id="subject" data-msg="Please select the service" required>
-                  <option value="">------ When should we contact ------</option>
-                  <option value="All Day">All Day</option>
-                  <option value="Morning 9 :00 AM to 01 :00 PM">Morning 9 :00 AM to 01 :00 PM</option>
-                  <option value="Afternoon 01:00 PM to 07:00 PM">Afternoon 01:00 PM to 07:00 PM</option>
-                </select>
-                <div class="validate"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Mention Your concern" placeholder="Mention Your concern" required></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center sendmsg"><button type="submit" name="submit" onclick="sendrequest()">Send Message</button></div>
             </form>
           </div>
       </div>

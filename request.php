@@ -95,6 +95,9 @@ if (!isset($_GET['evn']) || !isset($_SESSION['V-Help '])) {
           <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="300">
             <form action="contact_request.php" method="post" role="form" class="php-email-form">
               <div class="form-group">
+                <p>Service Request : <b><?PHP echo $event_name;?></b></p>
+              </div>
+              <div class="form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required/>
                 <div class="validate"></div>
               </div>
@@ -145,7 +148,7 @@ if (!isset($_GET['evn']) || !isset($_SESSION['V-Help '])) {
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center sendmsg"><button type="submit" name="submit" onclick="sendrequest()">Send Message</button></div>
+              <div class="text-center sendmsg"><button type="submit" name="submit" >Send Message</button></div>
             </form>
           </div>
       </div>
