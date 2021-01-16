@@ -110,26 +110,37 @@ if (!isset($_GET['evn']) || !isset($_SESSION['V-Help '])) {
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-              <input type="hidden" name="services" class="form-control" id="subject" value="<?PHP echo $event_name;?>"required>
-                  <!--<select name="services" class="form-control" id="subject" data-msg="Please select the service" required>
-                    <option value="">------ Select Service ------</option>
-                    <option value="Electrical Works">Electrical Works</option>
-                    <option value="Mobile/Laptop Repairs">Mobile/Laptop Repairs</option>
-                    <option value="Apply PAN">Apply PAN</option>
-                    <option value="Property Brokerage">Property Brokerage</option>
-                    <option value="LIC Services & Housing Loans">LIC Services & Housing Loans</option>
-                    <option value="Coding Classes">Coding Classes</option>
-                    <option value="KG to PG Tutions">KG to PG Tutions</option>
-                    <option value="Music Classes">Music Classes</option>
-                    <option value="Drawing Classes">Drawing Classes</option>
-                    <option value="Arts/Crafts Classes">Arts/Crafts Classes</option>
-                    <option value="Soft Skills Training">Soft Skills Training</option>
-                    <option value="Personality Development">Personality Development</option>
-                    <option value="Voice & Accent Training">Voice & Accent Training</option>
-                    <option value="Resume Building">Resume Building</option>
-                  </select>-->
+                <input type="hidden" name="services" class="form-control" id="subject" value="<?PHP echo $event_name;?>"required/>
               <div class="validate"></div>
               </div>
+              <div class="form-group">
+                  <select name="present_studing" class="form-control" id="present_studing" data-msg="Please select the service" required/>
+                    <option value="">------ Present Studing ------</option>
+                    <option value="YES">YES</option>
+                    <option value="NO">NO</option>
+                  </select>
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <select name="ug-pg" class="form-control" id="ug-pg" data-msg="Please select the service" required/>
+                    <option value="">------ Select UG/PG ------</option>
+                    <option value="UG">UG</option>
+                    <option value="Pg">PG</option>
+                  </select>
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="standard" id="standard" placeholder="Your standard" data-rule="contact" data-msg="Please enter a valid contact" required/>
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group">
+                  <select name="national-international-education" class="form-control" id="national-international-education" data-msg="Please select the national/international-education "required/>
+                    <option value="">------ Select National/International Education ------</option>
+                    <option value="National">National</option>
+                    <option value="International">International</option>
+                  </select>
+                  <div class="validate"></div>
+                </div>
               <div class="form-group">
                 <select name="time" class="form-control" id="subject" data-msg="Please select the service" required>
                   <option value="">------ When should we contact ------</option>
@@ -143,6 +154,7 @@ if (!isset($_GET['evn']) || !isset($_SESSION['V-Help '])) {
                 <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Mention Your concern" placeholder="Mention Your concern" required></textarea>
                 <div class="validate"></div>
               </div>
+              
               <div class="mb-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
@@ -191,6 +203,14 @@ if (!isset($_GET['evn']) || !isset($_SESSION['V-Help '])) {
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script>
+  function studing() {
+    if($("#present_study_yes").prop("checked") == true){
+      $(".student_yes").show();
+    }else{
+      $(".student_yes").hide();
+    }
+  }
+  </script>
 </body>
 </html>

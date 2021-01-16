@@ -9,8 +9,8 @@ $_SESSION['V-Help '] = "V-Help | Single Platform for Multiple Services";
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>V-Help | Single Platform for Multiple Services</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Vhelp was launched in 2020. The platform helps customers book reliable home services like Electrical works, Mobile and Laptop repairs, PAN card, Property brokerage, LIC services and Housing loans, Online services etc." name="description">
+  <meta content="V-Help | Single Platform for Multiple Services,Electrical Works,Mobile/Laptop Repairs,Apply Or Modify PAN,Property Brokerage,LIC Services & Housing Loans,Carrier Councelling,Coding Classes,KG to PG Tutions,Music Classes,Drawing Classes,Arts/Crafts Classes,Soft Skills Training,Resume Building,Personality Development,Voice & Accent Training" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -46,7 +46,7 @@ $_SESSION['V-Help '] = "V-Help | Single Platform for Multiple Services";
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html"><img src="assets/img/Vhelp_logo.JPG"></a></h1>
+        <h1 class="text-light"><a href="index.php"><img src="assets/img/Vhelp_logo.JPG"></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -221,6 +221,15 @@ $_SESSION['V-Help '] = "V-Help | Single Platform for Multiple Services";
             </div>
           </div>
         </a>
+        <a href="carrier_councilling.php?evn=Carrier Councelling">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 mt-4">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="icofont-university"></i></div>
+              <h4 class="title"><a href="carrier_councilling.php?evn=Carrier Councelling">Carrier Councelling</a></h4>
+              <p class="description">Career Counseling is a process that will help you to know and understand yourself and the world of work in order to make career, educational, and life decisions.</p>
+            </div>
+          </div>
+        </a>
         </div>
 
       </div>
@@ -332,7 +341,7 @@ $_SESSION['V-Help '] = "V-Help | Single Platform for Multiple Services";
           </div>
           <div class="col-lg-7">
             <p>
-              If you do have any complaints, suggestions or feedback with regard to the service quality, or our service provider, pricing etc please report it to our Customer Support Desk at <a href="tel:+91 8790546457">+91 8790546457</a> or mail us at <a href="mailto:vhelp.2serveu@gmail.com">vhelp.2serveu@gmail.com.</a> It is advised to do this within 24hrs of your service.
+              If you do have any complaints, suggestions or feedback with regard to the service quality, or our service provider, pricing etc please report it to our Customer Support Desk at <a href="tel:+91 9883676769">+91 9883676769</a> or mail us at <a href="mailto:vhelp.2serveu@gmail.com">vhelp.2serveu@gmail.com.</a> It is advised to do this within 24hrs of your service.
             </p>
           </div>
         </div><!-- End F.A.Q Item-->
@@ -419,7 +428,11 @@ $_SESSION['V-Help '] = "V-Help | Single Platform for Multiple Services";
 
               <div>
                 <i class="ri-phone-line"></i>
-                <p><a href="tel:+91 8790546457">+91 8790546457</a></p>
+                <p><a href="tel:+91 9883676769">+91 9883676769</a></p>
+              </div>
+              <div>
+                <i class="icofont-whatsapp"></i>
+                <p><a href="tel:+91 9110707105">+91 9110707105</a></p>
               </div>
 
             </div>

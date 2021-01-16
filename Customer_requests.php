@@ -1,8 +1,9 @@
 <?PHP 
+session_start();
 if (!isset($_SESSION['V-Help'])) {
   header('location:index.php');
 }
-$connect = mysqli_connect("localhost","qp5uwu6wq87f","Girish@falcon5","Vhelp");
+include 'db_connection.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,8 +74,6 @@ $connect = mysqli_connect("localhost","qp5uwu6wq87f","Girish@falcon5","Vhelp");
           <h2>Customer Requests</h2>
         </div>
         <div class="row">
-
-
           <div class="col-lg-12 col-md-12" data-aos="fade-up" data-aos-delay="300">
             <div class="table-responsive">
                 <table class="table ">
@@ -92,7 +91,7 @@ $connect = mysqli_connect("localhost","qp5uwu6wq87f","Girish@falcon5","Vhelp");
                     </thead>
                     <tbody>
                     <?PHP 
-                        $sellect=mysqli_query($connect,"SELECT * FROM `ServiceRequests` ORDER BY `sno` DESC");
+                        $sellect=mysqli_query($connect,"SELECT * FROM `servicerequests` ORDER BY `sno` DESC");
                         $i=1;
                         while ($row=mysqli_fetch_array($sellect)) { ?>
                         <tr>
@@ -110,7 +109,55 @@ $connect = mysqli_connect("localhost","qp5uwu6wq87f","Girish@falcon5","Vhelp");
                 </table>
             </div>
           </div>
-      </div>
+        </div>
+        <div class="section-title" data-aos="fade-up">
+          <h2>Carrier Councilling Requests</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <div class="table-responsive">
+                <table class="table ">
+                    <thead class="bg-success">
+                        <tr>
+                            <th scope="col">sno</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">Request Id</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Customer Email</th>
+                            <th scope="col">Customer Phone</th>
+                            <th scope="col">Contact Timings</th>
+                            <th scope="col">Requirements:</th>
+                            <th scope="col">Present Studing</th>
+                            <th scope="col">UG/PG</th>
+                            <th scope="col">Standard</th>
+                            <th scope="col">National/International Education</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?PHP 
+                        $sellect=mysqli_query($connect,"SELECT * FROM `carriercouncilling` ORDER BY `sno` DESC");
+                        $i=1;
+                        while ($row=mysqli_fetch_array($sellect)) { ?>
+                        <tr>
+                            <th scope="col"><?PHP echo $i;?></th>
+                            <th scope="col"><?PHP echo $row['services'];?></th>
+                            <th scope="col"><?PHP echo $row['request_id'];?></th>
+                            <th scope="col"><?PHP echo $row['name'];?></th>
+                            <th scope="col"><?PHP echo $row['email'];?></th>
+                            <th scope="col"><?PHP echo $row['contact'];?></th>
+                            <th scope="col"><?PHP echo $row['time'];?></th>
+                            <th scope="col"><?PHP echo $row['message'];?></th>
+                            <th scope="col"><?PHP echo $row['present_studing'];?></th>
+                            <th scope="col"><?PHP echo $row['ug-pg'];?></th>
+                            <th scope="col"><?PHP echo $row['standard'];?></th>
+                            <th scope="col"><?PHP echo $row['national-international-education'];?></th>
+                        </tr>
+                        <?PHP $i ++; }  ?>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
       </div>
     </section><!-- End Contact Section -->
 

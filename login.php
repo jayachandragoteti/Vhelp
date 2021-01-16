@@ -2,7 +2,7 @@
 session_start();
 $use="V-Help";
 $pass="V-Help-password";
-$connect = mysqli_connect("localhost","qp5uwu6wq87f","Girish@falcon5","Vhelp");
+include 'db_connection.php';
 if (isset($_POST['login_submit'])) {
 
     $username=$_POST['username'];
